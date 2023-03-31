@@ -11,7 +11,7 @@ var express = require('express');
 const session = require('express-session');
 const MongoDBSession = require('connect-mongodb-session')(session);
 require('dotenv').config();
-var gateway = require('./APILibrary/gatewayAPI');
+
 
 
 
@@ -57,18 +57,6 @@ async function main() {
         app.use('/gateway', gatewayRouter)
         
 
-/*
-let testData = await gateway.getData();
-
-app.get('/', function (req, res) {
-
-    //console.log(req.session);
-    //req.session.isAuth = true;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(testData, null, 3));
-    
-});
-*/
         app.listen(process.env.PORT);
         console.log("listening on "+ process.env.PORT);
 

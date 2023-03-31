@@ -3,7 +3,7 @@ var router = express.Router();
 
 var gateMethods = require('../APILibrary/gatewayAPI');
 
-/* GET users listing. */
+/* GET default. */
 router.get('/', function(req, res, next) {
   res.send('Hello Gateway');
 });

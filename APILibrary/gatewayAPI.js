@@ -64,6 +64,7 @@ addDataScrap: async function addDataScraper(data) {
     
     
 },
+//verify if email is in Users db
 verifyEmail: async function verifyEmail(email)
 {
     const response = await fetch('http://localhost:8082/users/email', {
@@ -81,7 +82,7 @@ verifyEmail: async function verifyEmail(email)
 },
 
 
-//links to addUser function in user.js
+//add user to Users db
 addUser: async function add_user(userData)
 {
    
@@ -100,7 +101,7 @@ addUser: async function add_user(userData)
     
     
 },
-//links to login function in login.js
+//checks if password matches the one in the user profile in Users db
 passcheck: async function passcheck(login)
     {
         const response = await fetch('http://localhost:8082/users/password', {
@@ -135,7 +136,7 @@ getData: async function get_data()
   // do something with myJson
   return myJson;
 },
-// item liked
+// function called when an item is liked
 likeItem: async function item_liked(data) 
 {
     const response = await fetch('http://localhost:8083/ratings/itemliked', {
@@ -151,7 +152,7 @@ likeItem: async function item_liked(data)
       return myJson;
 
 },
-//item disliked
+// function called when an item is disliked
 dislikeItem: async function item_disliked(data) 
 {
     const response = await fetch('http://localhost:8083/ratings/itemdisliked', {
